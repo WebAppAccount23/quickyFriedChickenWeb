@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+    <style>
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* White background */
+            color: #000000; /* Black text */
+        }
+
+        /* Header styling */
+        header {
+            background-color: #ff0000; /* Red header background */
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #ffffff; /* White header text */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff; /* White navigation links */
+            text-decoration: none;
+        }
+
+        /* Main content styling */
+        section {
+            padding: 20px;
+        }
+
+        section h2 {
+            color: #ff0000; /* Red section headings */
+        }
+
+        address {
+            margin-bottom: 20px;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #ff0000; /* Red footer background */
+            color: #ffffff; /* White footer text */
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="assets/logo.png" alt="Restaurant Logo" width="150">
+        <h1>Welcome to Our Restaurant</h1>
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="menu">
+        <h2>Menu</h2>
+        <div>
+            <img src="assets/menu-item1.jpg" alt="Menu Item 1">
+            <img src="assets/menu-item2.jpg" alt="Menu Item 2">
+            <!-- Add more menu items as needed -->
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <address>
+            <p>123 Restaurant St, City, Country</p>
+            <p>Phone: 123-456-7890</p>
+            <p>Email: info@example.com</p>
+        </address>
+        <div id="map" style="height: 400px; width: 100%;"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Restaurant Name. All rights reserved.</p>
+    </footer>
+
+    <!-- Add your Google Maps API key here -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            var restaurantLocation = { lat: 40.7128, lng: -74.0060 }; // Example location coordinates
+            var map = new google.maps.Map(document.getElementById("map"), {
+                center: restaurantLocation,
+                zoom: 15,
+            });
+            var marker = new google.maps.Marker({
+                position: restaurantLocation,
+                map: map,
+                title: "Restaurant Name",
+            });
+        }
+    </script>
+</body>
+</html>
