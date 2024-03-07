@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Website</title>
+    <title>Quicky Fried Chicken</title>
     <style>
         /* Body styling */
         body {
@@ -64,12 +64,25 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* Map styling */
+        .map-container {
+            width: 100%;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
     </style>
 </head>
 <body>
     <header>
         <img src="assets/logo.png" alt="Restaurant Logo" width="150">
-        <h1>Welcome to Our Restaurant</h1>
+        <h1>Welcome to Quicky Fried Chicken</h1>
         <nav>
             <ul>
                 <li><a href="#menu">Menu</a></li>
@@ -78,7 +91,7 @@
         </nav>
     </header>
 
-    <section id="menu">
+   <section id="menu">
         <h2>Menu</h2>
         <div>
             <img src="assets/menu-item1.jpg" alt="Menu Item 1">
@@ -91,31 +104,16 @@
         <h2>Contact Us</h2>
         <address>
             <p>Neustadt 19, 35390 Gießen, Deutschland</p>
-            <p>Phone: 064198453381</p>
+            <p>Tel: 064198453381</p>
             <p>Email: quickyfriedchickengiessen@gmail.com</p>
         </address>
-        <div id="map" style="height: 400px; width: 100%;"></div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/place/Quicky+Fried+Chicken+Gießen/@50.586663,8.6706928,17z/data=!3m1!4b1!4m6!3m5!1s0x47bc5900487a7779:0xe62d352104981007!8m2!3d50.586663!4d8.6706928!16s%2Fg%2F11ld2t50n3?entry=ttu" allowfullscreen></iframe>
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2024 Quicky Fried Chicken. All rights reserved.</p>
     </footer>
-
-    <!-- Add your Google Maps API key here -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-    <script>
-        function initMap() {
-            var restaurantLocation = { lat:50.586765177626006, lng:  8.670639155819401 }; // Example location coordinates
-            var map = new google.maps.Map(document.getElementById("map"), {
-                center: restaurantLocation,
-                zoom: 15,
-            });
-            var marker = new google.maps.Marker({
-                position: restaurantLocation,
-                map: map,
-                title: "Restaurant Name",
-            });
-        }
-    </script>
 </body>
 </html>
